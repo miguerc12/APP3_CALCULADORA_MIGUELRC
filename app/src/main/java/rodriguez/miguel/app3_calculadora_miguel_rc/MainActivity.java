@@ -40,6 +40,58 @@ public class MainActivity extends AppCompatActivity {
         display.setText(currentExpression);
         currentNumber = "";
     }
+    public void onEqualClick(View view) {
+        try {
+            result = evaluateExpression(currentExpression);
+            display.setText(String.valueOf(result));
+            resultDisplay.setText(currentExpression + "=" + String.valueOf(result));
+            currentNumber = String.valueOf(result);
+            currentExpression = "";
+        } catch (Exception e) {
+            display.setText("Error: " + e.getMessage());
+        }
+    }
+
+    public void onClearClick(View view) {
+        currentNumber = "";
+        currentExpression = "";
+        display.setText("");
+        resultDisplay.setText("");
+    }
+
+    private double evaluateExpression(String expression) throws Exception {
+        String[] numbers = expression.split("[+\\-*/]");
+        String[] operators = expression.split("\\d+");
+        double result = Double.parseDouble(numbers[0]);
+
+        for (int i = 1; i < numbers.length; i++) {
+            double num = Double.parseDouble(numbers[i]);
+            String operator = operators[i];
+            switch (operator) {
+                case "+":
+                    result += num;
+                    break;
+                case "-":
+                    result -= num;
+                    break;
+                case "*":
+                    result *= num;
+                    break;
+                case "/":
+                    if (num != 0) {
+                        result /= num;
+                    } else {
+                        throw new Exception("Division by zero");
+                    }
+                    break;
+                default:
+                    throw new Exception("Invalid operator: " + operator);
+            }
+        }
+        return result;
+    }
+
+
 
 }
 
