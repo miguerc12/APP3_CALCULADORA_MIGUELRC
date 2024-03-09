@@ -26,6 +26,21 @@ public class MainActivity extends AppCompatActivity {
         display = findViewById(R.id.display);
         resultDisplay = findViewById(R.id.result_display);
     }
+
+    public void onNumberClick(View view) {
+        Button button = (Button) view;
+        currentNumber += button.getText().toString();
+        currentExpression += button.getText().toString();
+        display.setText(currentExpression);
+    }
+
+    public void onOperatorClick(View view) {
+        Button button = (Button) view;
+        currentExpression += button.getText().toString();
+        display.setText(currentExpression);
+        currentNumber = "";
+    }
+
 }
 
 
