@@ -3,9 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_2"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageViewHeader"
+        android:layout_width="249dp"
+        android:layout_height="162dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="60dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_1" />
 
     <TextView
         android:id="@+id/result_display"

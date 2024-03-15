@@ -3,16 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2196F3"
+    android:background="@drawable/fondoapplogin"
     tools:context=".Login">
+
+
+    <ImageView
+        android:id="@+id/imageViewHeader"
+        android:layout_width="232dp"
+        android:layout_height="162dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="60dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img" />
 
     <EditText
         android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:hint="Usuario"
-        android:layout_marginTop="-80dp"
         android:inputType="text"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
@@ -22,8 +38,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextUsername"
-        android:hint="Contraseña"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginTop="16dp"
+        android:hint="Contraseña"
         android:inputType="textPassword"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF" />
@@ -34,9 +53,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextPassword"
         android:layout_centerHorizontal="true"
-        android:text="Iniciar Sesión"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginTop="16dp"
         android:background="#FF5722"
+        android:text="Iniciar Sesión"
         android:textColor="#FFFFFF" />
 
 </RelativeLayout>
